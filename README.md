@@ -4,7 +4,7 @@ RevealDown
 Summary
 -------
 
-Consistent conversion of [Markdown](http://daringfireball.net/projects/markdown/) to [Reveal.js](http://lab.hakim.se/reveal-js/) slides (via your favourite of markdown to html tool, e.g. [Pandoc](http://johnmacfarlane.net/pandoc/)).
+Consistent conversion of [Markdown](http://daringfireball.net/projects/markdown/) to [Reveal.js](http://lab.hakim.se/reveal-js/) slides (via your favourite markdown to html tool, e.g. [Pandoc](http://johnmacfarlane.net/pandoc/)).
 
 Example usage:
 
