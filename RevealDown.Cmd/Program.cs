@@ -16,7 +16,7 @@ namespace RevealDown.Cmd
                 Console.WriteLine("Pipe in input, get stdout. Extra section breaks (within a slide) are defined by adding <!----> on a line.");
                 Console.WriteLine("-l <slide level> E.g. -l 2 (default 1) = specify the deepest heading level which will result in a slide break. The next level in will create section breaks within a slide.");
                 Console.WriteLine("-e = encapsulate sections output with barebones reveal.js html template");
-                Console.WriteLine("-h = horizontal rules (hr tag) to be replaced by slidebreaks (---- in markdown)");
+                Console.WriteLine("-h = horizontal rules (---- in markdown) to be replaced by section breaks.");
                 return;
             }
 
