@@ -10,7 +10,7 @@ Example usage:
 
     pandoc -t html5 -s TalkNotes.md | RevealDown.Cmd.exe -e > slides.html
 
-Put the resultant html files (and any associated images) into a folder with Reveal.js
+Put the resultant html file (and any associated images) into a folder with Reveal.js
 
 [Download Binaries](https://github.com/regexjoe/RevealDown/releases)
 
