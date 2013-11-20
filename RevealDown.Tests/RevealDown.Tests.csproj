@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTests\RevealDown.Engine\SectionMakerTests.cs" />
+    <Compile Include="UnitTests\RevealDown.Cmd\SectionMakerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

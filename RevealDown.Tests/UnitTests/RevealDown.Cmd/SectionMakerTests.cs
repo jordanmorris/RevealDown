@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using RevealDown.Cmd;
 
-namespace RevealDown.Tests.UnitTests.RevealDown.Engine
+namespace RevealDown.Tests.UnitTests.RevealDown.Cmd
 {
     [TestFixture]
     public class SectionMakerTests

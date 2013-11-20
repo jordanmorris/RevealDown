@@ -34,34 +34,41 @@ namespace RevealDown.Cmd
 
             var foundBody = false;
             var awaitingFirstBreak = true;
-            foreach (var line in htmlLines)
+            var firstAttempt = true;
+            while (!foundBody)
             {
-                if (!foundBody)
+                if (!firstAttempt) foundBody = true;
+                foreach (var line in htmlLines)
                 {
-                    foundBody = Regex.IsMatch(line, @"<body(?=(>| ))", RegexOptions.IgnoreCase | RegexOptions.ExplicitCapture);
-                    continue;
-                }
-                if (Regex.IsMatch(line, @"</body>", RegexOptions.IgnoreCase))
-                {
-                    break;
-                }
+                    if (!foundBody)
+                    {
+                        foundBody = Regex.IsMatch(line, @"<body(?=(>| ))",
+                                                  RegexOptions.IgnoreCase | RegexOptions.ExplicitCapture);
+                        continue;
+                    }
+                    if (Regex.IsMatch(line, @"</body>", RegexOptions.IgnoreCase))
+                    {
+                        break;
+                    }
 
-                var lineType = GetLineType(line);
+                    var lineType = GetLineType(line);
 
-                //don't append breaktags for the first breaking line, since the section was opened before this loop
-                if (awaitingFirstBreak && lineType != LineType.NoBreak)
-                {
-                    awaitingFirstBreak = false;
-                }
-                else
-                {
-                    AppendBreakTags(sectionsBuilder, lineType);   
-                }
+                    //don't append breaktags for the first breaking line, since the section was opened before this loop
+                    if (awaitingFirstBreak && lineType != LineType.NoBreak)
+                    {
+                        awaitingFirstBreak = false;
+                    }
+                    else
+                    {
+                        AppendBreakTags(sectionsBuilder, lineType);
+                    }
 
-                if (lineType != LineType.SectionBreakWhichReplacesLine)
-                {
-                    sectionsBuilder.AppendLine(line);
+                    if (lineType != LineType.SectionBreakWhichReplacesLine)
+                    {
+                        sectionsBuilder.AppendLine(line);
+                    }
                 }
+                firstAttempt = false;
             }
 
             sectionsBuilder.AppendLine("</section>");

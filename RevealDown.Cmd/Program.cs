@@ -13,7 +13,7 @@ namespace RevealDown.Cmd
             {
                 Console.WriteLine("Usage:");
                 Console.WriteLine("RevealDown.Cmd.exe [-e] [-l <slide level>] [-h] (stdin)");
-                Console.WriteLine("Pipe in input, get stdout. Extra section breaks (within a slide) are defined by adding <!----> on a line.");
+                Console.WriteLine("Pipe in input, get stdout. Extra section breaks (within a slide) are defined by adding <!----> on a line. If there are body tags in the input, only what is inside the body tags will be processed/output.");
                 Console.WriteLine("-l <slide level> E.g. -l 2 (default 1) = specify the deepest heading level which will result in a slide break. The next level in will create section breaks within a slide.");
                 Console.WriteLine("-e = encapsulate sections output with barebones reveal.js html template");
                 Console.WriteLine("-h = horizontal rules (---- in markdown) to be replaced by section breaks.");
@@ -34,7 +34,9 @@ namespace RevealDown.Cmd
             sectionMaker.HorizontalRuleBreaksSlide = hrBreaksSlide;
 
             var input = Console.In.ReadToEnd();
-            var sections = sectionMaker.GetSections(input.Split(new[] { Environment.NewLine }, StringSplitOptions.None));
+            var sections =
+                sectionMaker.GetSections(input.Split(new[] {Environment.NewLine, "\r", "\n"},
+                                                     StringSplitOptions.RemoveEmptyEntries));
 
             Console.OutputEncoding = Encoding.UTF8;
             Console.Out.Write(sections);
