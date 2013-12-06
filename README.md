@@ -21,12 +21,20 @@ Usage
 ``` bash
 RevealDown.Cmd.exe [-t ["path/template.html"]] [-l <slide level>] [-h] (stdin)
 
-Pipe in input, get stdout. Extra section breaks (within a slide) are defined by adding <!----> on a line. If there are body tags in the input, only what is inside the body tags will be processed/output.
+Pipe in input, get stdout. Extra section breaks (within a slide) are defined by 
+adding <!----> on a line. If there are body tags in the input, only what is 
+inside the body tags will be processed/output.
 ______________________________
 
--l <slide level> E.g. -l 2 (default 1) = specify the deepest heading level which will result in a slide break. The next level in will create section breaks within a slide.
+-l <slide level> E.g. -l 2 (default 1) = specify the deepest heading level 
+which will result in a slide break. The next level in will create section 
+breaks within a slide.
 
--t ["path/template.html"] = encapsulate slides output with an html template. By default uses a built-in barebones reveal.js html template, otherwise uses the template you specify in the optional path argument. In this case the slides will be inserted immediately after the opening body tag (which must be on its own line).
+-t ["path/template.html"] = encapsulate slides output with an html template. By 
+default uses a built-in barebones reveal.js html template, otherwise uses the 
+template you specify in the optional path argument. In this case the slides 
+will be inserted immediately after the opening body tag (which must be on its 
+own line).
 
 -h = horizontal rules (---- in markdown) also to be replaced by section breaks.
 ```
@@ -41,7 +49,7 @@ Philosophy
 ----------
 Although RevealDown is intended for markdown users, it actually parses html. I was having a lot of trouble getting consistent results from other parsers which attempt to create reveal.js slides directly from markdown. I then realised there is a lot more predictability in html generated from markdown than there is in markdown itself. RevealDown capitalises on that fact.
 
-The linux-like approach of piping with other parsers has other happy consequences, like how your choice of markdown->html parser is not restricted to those which directly support reveal.js slide output (or any slide output). 
+The linux-like approach of piping with other parsers has other happy consequences, like how your choice of markdown to html parser is not restricted to those which directly support reveal.js slide output (or any slide output). 
 
 Other important decisions involved how to manage slide divisions. In this I have tried to support a purist markdown approach, or the use of dividers which are at least silent in html output.
 
@@ -49,5 +57,4 @@ Improvements I would make, given the time:
 -----------------------------------------
 - Rewrite it in a functional language. It turns out the task is more suited to that.
 - Parse based on actual XML elements instead of line-by-line.
-- Better application of solid principles.
-
+- Better application of SOLID principles.  
