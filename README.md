@@ -16,7 +16,7 @@ pandoc -t html5 -s TalkNotes.md | RevealDown.Cmd.exe -t > TalkSlides.html
 cat TalkNotes.md | marked | revealdown -t template.html -l 2 > TalkSlides.html
 ```
 
-Put the resultant html file (and any associated images) into a folder with Reveal.js
+Put the resultant html file (and any associated images) somewhere with a folder named `reveal.js`, containing the reveal.js files.
 
 [Download Binaries](https://github.com/regexjoe/RevealDown/releases)
 
