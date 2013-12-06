@@ -22,6 +22,8 @@ Put the resultant html file (and any associated images) into a folder with Revea
 
 Usage
 -----
+Note, RevealDown only outputs the `<div>` containing the slides themselves (no html/body tags), unless you specify the `-t` switch.
+
 ``` bash
 revealdown [-t ["path/template.html"]] [-l <slide level>] [-h] (stdin)
 
