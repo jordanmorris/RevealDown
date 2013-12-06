@@ -48,7 +48,7 @@ namespace RevealDown.Tests.UnitTests.RevealDown.Cmd
         public void GetSections_puts_sections_in_expected_places()
         {
             //arrange
-            var sectionMaker = new SectionMaker();
+            var sectionMaker = new SlidesMaker();
 
             //act
             var sections = sectionMaker.GetSections(TestMarkdownHtml.Split(new[] { Environment.NewLine }, StringSplitOptions.None));

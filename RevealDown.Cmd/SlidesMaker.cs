@@ -3,31 +3,41 @@ using System.Text.RegularExpressions;
 
 namespace RevealDown.Cmd
 {
-    public class SectionMaker
+    internal class SlidesMaker
     {
         private const bool AddHeaderFooterDefault = true;
         private const int SlideLevelDefault = 1;
         private const bool HorizontalRuleBreaksSlideDefault = false;
 
+        internal static Regex BodyLineRegex = new Regex(@"<body(?=(>| ))",
+                                                        RegexOptions.IgnoreCase | RegexOptions.ExplicitCapture |
+                                                        RegexOptions.Compiled);
 
-        public SectionMaker()
+
+        internal SlidesMaker()
         {
             AddHeaderFooter = AddHeaderFooterDefault;
             SlideLevel = SlideLevelDefault;
             HorizontalRuleBreaksSlide = HorizontalRuleBreaksSlideDefault;
+            Header = TemplateDefaults.RevealJsHeader;
+            Footer = TemplateDefaults.RevealJsFooter;
         }
 
 
         public bool AddHeaderFooter { get; set; }
         public int SlideLevel { get; set; }
         public bool HorizontalRuleBreaksSlide { get; set; }
+        public string Header { get; set; }
+        public string Footer { get; set; }
 
 
         public string GetSections(string[] htmlLines)
         {
             var sectionsBuilder = new StringBuilder();
 
-            if (AddHeaderFooter) sectionsBuilder.Append(Constants.RevealJsHeader);
+            if (AddHeaderFooter) sectionsBuilder.Append(Header);
+
+            sectionsBuilder.Append(TemplateDefaults.RevealJsSlidesOpen);
 
             sectionsBuilder.AppendLine("<section style=\"level1\">");
             sectionsBuilder.AppendLine("<section style=\"level2\">");
@@ -42,8 +52,7 @@ namespace RevealDown.Cmd
                 {
                     if (!foundBody)
                     {
-                        foundBody = Regex.IsMatch(line, @"<body(?=(>| ))",
-                                                  RegexOptions.IgnoreCase | RegexOptions.ExplicitCapture);
+                        foundBody = BodyLineRegex.IsMatch(line);
                         continue;
                     }
                     if (Regex.IsMatch(line, @"</body>", RegexOptions.IgnoreCase))
@@ -74,7 +83,9 @@ namespace RevealDown.Cmd
             sectionsBuilder.AppendLine("</section>");
             sectionsBuilder.AppendLine("</section>");
 
-            if (AddHeaderFooter) sectionsBuilder.Append(Constants.RevealJsFooter);
+            sectionsBuilder.Append(TemplateDefaults.RevealJsSlidesClose);
+
+            if (AddHeaderFooter) sectionsBuilder.Append(Footer);
 
             return sectionsBuilder.ToString();
         }

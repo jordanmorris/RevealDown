@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="reveal.js/css/reveal.min.css">
+    <link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+    <link rel="stylesheet" href="dependencies/default.min.css" id="theme">
+</head>
+
+<body>
+    <!-- slide html will be inserted here, at the start of the body -->
+
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script src="reveal.js/js/reveal.min.js"></script>
+    <script src="dependencies/jquery.min.js"></script>
+    <script src="dependencies/highlight.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            Reveal.initialize();
+            $('pre code').each(function (i, e) {
+                var currClass = $(e).attr('class');
+                if (currClass)
+                {
+                    var newClass = currClass.replace('lang-', '');
+                    $(e).attr('class', newClass);
+                }
+                hljs.highlightBlock(e)
+            });
+        });
+    </script>
+</body>
+</html>

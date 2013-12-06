@@ -41,11 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants.cs" />
+    <Compile Include="TemplateDefaults.cs" />
     <Compile Include="LineType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SectionMaker.cs" />
+    <Compile Include="SlidesMaker.cs" />
+    <Compile Include="TemplateProvision.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
