@@ -12,7 +12,7 @@ namespace RevealDown.Cmd
             if (!IsPipedInput())
             {
                 Console.WriteLine("Usage:");
-                Console.WriteLine("RevealDown.Cmd.exe [-t [\"path/template.html\"]] [-l <slide level>] [-h] (stdin)");
+                Console.WriteLine("revealdown [-t [\"path/template.html\"]] [-l <slide level>] [-h] (stdin)");
                 Console.WriteLine();
                 Console.WriteLine("Pipe in input, get stdout. Extra section breaks (within a slide) are defined by adding <!----> on a line. If there are body tags in the input, only what is inside the body tags will be processed/output.");
                 Console.WriteLine();

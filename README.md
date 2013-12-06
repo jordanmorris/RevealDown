@@ -23,7 +23,7 @@ Put the resultant html file (and any associated images) into a folder with Revea
 Usage
 -----
 ``` bash
-RevealDown.Cmd.exe [-t ["path/template.html"]] [-l <slide level>] [-h] (stdin)
+revealdown [-t ["path/template.html"]] [-l <slide level>] [-h] (stdin)
 
 Pipe in input, get stdout. Extra section breaks (within a slide) are defined by 
 adding <!----> on a line. If there are body tags in the input, only what is 
