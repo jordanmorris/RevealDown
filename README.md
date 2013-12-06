@@ -6,10 +6,14 @@ Summary
 
 Consistent conversion of [Markdown](http://daringfireball.net/projects/markdown/) to [Reveal.js](http://lab.hakim.se/reveal-js/) slides (via your favourite markdown to html tool, e.g. [Pandoc](http://johnmacfarlane.net/pandoc/) or [Marked](https://github.com/chjj/marked))
 
-Example usage:
+Use Examples:
 
 ``` bash
 pandoc -t html5 -s TalkNotes.md | RevealDown.Cmd.exe -t > TalkSlides.html
+```
+
+``` bash
+cat TalkNotes.md | marked | revealdown -t template.html -l 2 > TalkSlides.html
 ```
 
 Put the resultant html file (and any associated images) into a folder with Reveal.js
@@ -38,6 +42,8 @@ own line).
 
 -h = horizontal rules (---- in markdown) also to be replaced by section breaks.
 ```
+
+[Mono](http://www.mono-project.com) compatible.
 
 Templates
 ---------
