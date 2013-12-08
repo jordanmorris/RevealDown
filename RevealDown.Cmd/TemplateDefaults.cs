@@ -10,15 +10,15 @@
 
 		<title>Slides</title>
 
-		<link rel=""stylesheet"" href=""css/reveal.min.css"">
-		<link rel=""stylesheet"" href=""css/theme/default.css"" id=""theme"">
+		<link rel=""stylesheet"" href=""reveal.js/css/reveal.min.css"">
+		<link rel=""stylesheet"" href=""reveal.js/css/theme/default.css"" id=""theme"">
 	</head>
 
 	<body>
 ";
 
-        internal const string RevealJsFooter = @"		<script src=""lib/js/head.min.js""></script>
-		<script src=""js/reveal.min.js""></script>
+        internal const string RevealJsFooter = @"		<script src=""reveal.js/lib/js/head.min.js""></script>
+		<script src=""reveal.js/js/reveal.min.js""></script>
 
 		<script>
 
