@@ -24,9 +24,8 @@ Put the resultant html file (and any associated images) somewhere with a folder 
 
 ### Samples (WIP)
 
-Markdown|Ordinary HTML|Slides|Command used
 ---|---|---|---
-a|b|c|d
+**a**|b|c|d
 
 Usage
 -----
