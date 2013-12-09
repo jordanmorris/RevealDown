@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Slides</title>
+
+		<link rel="stylesheet" href="reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+<section style="level1">
+<section style="level2">
+<h1 id="revealdown">RevealDown</h1>
+</section>
+</section>
+<section style="level1">
+<section style="level2">
+<h2 id="summary">Summary</h2>
+<p>Consistent conversion of <a href="http://daringfireball.net/projects/markdown/">Markdown</a> to <a href="http://lab.hakim.se/reveal-js/">Reveal.js</a> slides (via your favourite markdown to html tool, e.g. <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a> or <a href="https://github.com/chjj/marked">Marked</a>)</p>
+</section>
+<section style="level2">
+<h3 id="use-examples">Use Examples</h3>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">pandoc</span> -t html5 -s TalkNotes.md <span class="kw">|</span> <span class="kw">RevealDown.Cmd.exe</span> -t <span class="kw">&gt;</span> TalkSlides.html</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cat</span> TalkNotes.md <span class="kw">|</span> <span class="kw">marked</span> <span class="kw">|</span> <span class="kw">revealdown</span> -t template.html -l 2 <span class="kw">&gt;</span> TalkSlides.html</code></pre>
+<p>Put the resultant html file (and any associated images) somewhere with a folder named <code>reveal.js</code>, containing the reveal.js files.</p>
+<hr />
+<p><a href="https://github.com/regexjoe/RevealDown/releases">Download Binaries</a></p>
+</section>
+</section>
+<section style="level1">
+<section style="level2">
+<h2 id="usage">Usage</h2>
+<p>Note, RevealDown only outputs the <code>&lt;div&gt;</code> containing the slides themselves (no html/body tags), unless you specify the <code>-t</code> switch.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">revealdown</span> [-t [<span class="st">&quot;path/template.html&quot;</span>]] [-l <span class="kw">&lt;</span>slide level<span class="kw">&gt;</span>] [-h] (stdin)
+<span class="kw">Pipe</span> in input, get stdout. Extra section breaks (within a slide) <span class="kw">are</span>
+<span class="kw">defined</span> by adding <span class="kw">`&lt;</span>!<span class="kw">----&gt;`</span> on a line. If there are body tags in the 
+<span class="kw">input</span>, only what is inside the body tags will be processed/output.
+<span class="kw">______________________________</span>   
+<span class="kw">-l</span> <span class="kw">&lt;</span>slide level<span class="kw">&gt;</span> E.g. -l 2 (default 1) = <span class="kw">specify</span> the deepest heading 
+<span class="kw">level</span> which will result in a slide break. The next level in will 
+<span class="kw">create</span> section breaks within a slide.
+<span class="kw">-t</span> [<span class="st">&quot;path/template.html&quot;</span>] = encapsulate slides output with an html 
+<span class="kw">template.</span> By default uses a built-in barebones reveal.js html 
+<span class="kw">template</span>, otherwise uses the template you specify in the optional 
+<span class="kw">path</span> argument. In this case the slides will be inserted immediately 
+<span class="kw">after</span> the opening body tag (which must be on its own line)<span class="kw">.</span>
+<span class="kw">-h</span> = horizontal rules (---- in markdown) <span class="kw">also</span> to be replaced by 
+<span class="kw">section</span> breaks.</code></pre>
+<p><a href="http://www.mono-project.com">Mono</a> compatible.</p>
+</section>
+</section>
+<section style="level1">
+<section style="level2">
+<h2 id="templates">Templates</h2>
+<p>Templates are nothing special. Just create an html file with your desired reveal.js setup. Specify the filename with the <code>-t</code> tag and RevealDown will output the html with the slides div inserted immediately below the opening <code>body</code> tag. You will of course need to bring the required includes with you (.css, .js files, etc.).</p>
+<p>There is one pre-made template in the source. It includes <a href="http://highlightjs.org/">highlight.js</a> and turns it on with marked syntax class name support.</p>
+</section>
+</section>
+<section style="level1">
+<section style="level2">
+<h2 id="philosophy">Philosophy</h2>
+<p>Although RevealDown is intended for markdown users, it actually parses html. I was having a lot of trouble getting consistent results from other parsers which attempt to create reveal.js slides directly from markdown. I then realised there is a lot more predictability in html generated from markdown than there is in markdown itself. RevealDown capitalises on that fact.</p>
+</section>
+<section style="level2">
+<p>The linux-like approach of piping with other parsers has other happy consequences, like how your choice of markdown to html parser is not restricted to those which directly support reveal.js slide output (or any slide output).</p>
+<p>Other important decisions involved how to manage slide divisions. In this I have tried to support a purist markdown approach, or the use of dividers which are at least silent in html output.</p>
+</section>
+</section>
+<section style="level1">
+<section style="level2">
+<h2 id="improvements-i-would-make-given-the-time">Improvements I would make, given the time:</h2>
+<ul>
+<li>Rewrite it in a functional language. It turns out the task is more suited to that.</li>
+<li>Parse based on actual XML elements instead of line-by-line.</li>
+<li>Better application of SOLID principles.</li>
+</ul>
+</section>
+</section>
+			</div>
+		</div>
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.min.js"></script>
+
+		<script>
+
+			Reveal.initialize();
+
+		</script>
+
+	</body>
+</html>
