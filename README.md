@@ -24,9 +24,10 @@ Put the resultant html file (and any associated images) somewhere with a folder 
 
 ### Samples (WIP)
 
- | | | 
----|---|---|---
-**a**|b|c|d
+------- --- --- ---
+**a**   b   c   d
+------- --- --- ---
+
 
 Usage
 -----
