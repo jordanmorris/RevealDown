@@ -1,0 +1,47 @@
+<h2 id="locating-cats">Locating Cats</h2>
+<h3 id="central-repository">Central Repository</h3>
+<p>All our regular cats used to be crammed in here:<br><img src="./images/oldplace.jpg" alt="Old location"></p>
+<!---->
+
+<p>The new thing is this:<br><img src="./images/newplace.jpg" alt="New location"></p>
+<p>All cats will now go somewhere under this <code>RegularCats</code> cage in <code>BusinessCats</code>. That gives us one place to look for Cats, yet still groups them by their area of relevance.</p>
+<!---->
+
+<p>If you get more than one or two in <code>GeneralCats.cs</code> which are logically grouped, pop them in a new cage.</p>
+<h3 id="maximising-findability">Maximising findability</h3>
+<p>Readability is not a strong point of cats (or so I hear - they&#39;re a heck of lot clearer than dogs if you ask me). To make sure people know what they are looking at, please also;  </p>
+<h4 id="use-very-specific-names-">Use very specific names.</h4>
+<ul>
+<li>Bad: <code>Furry</code> (unless you plan to capture every possible kind of fur).  </li>
+<li>Good: <code>HasTabbyFur</code>  </li>
+</ul>
+<h4 id="please-also-add-generous-xml-comments-">Please also add generous XML comments.</h4>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// A tabby is any domestic cat that has a coat featuring 
+/// distinctive stripes, dots, lines or swirling patterns, 
+/// usually together with a mark resembling an M.
+/// &lt;/summary&gt;</code></pre>
+<h4 id="write-tests-">Write tests!</h4>
+<p>Cats are prime candidate for the self-documenting powers of unit tests, and it&#39;s so easy with the new testing features just introduced! More on this tomorrow, though.</p>
+<h3 id="lazy-compilation">Lazy Compilation</h3>
+<p>The other main difference you will notice in our new cat repo is all the <code>Lazy&lt;Cat&gt;</code>&#39;s.</p>
+<pre><code class="lang-cs">private static readonly Lazy&lt;Cat&gt; CatTabbyLazy =
+    new Lazy&lt;Cat&gt;(() =&gt; new Cat(@&quot;Tabby Fur&quot;,
+        CatOptions.Compiled));  
+
+/// &lt;summary&gt;
+/// An orangy cat which is probably fat.
+/// &lt;/summary&gt;
+public static Cat CatTabby
+{
+    get { return CatTabbyLazy.Value; }
+}</code></pre>
+<!---->
+
+<p>Many of our cats, scattered about the place, are using <code>CatOptions.Compiled</code>.</p>
+<p>This makes them faster, <a href="http://www.codinghorror.com/blog/2005/03/to-compile-or-not-to-compile.html">most of the time</a>. The problem is that all our web servers effectively have to do a bunch of code compiling right after we deploy. That&#39;s bad, because we want our web servers to start serving requests ASAP.</p>
+<!---->
+
+<p>The solution to is to lazy load them. That way cats wait to compile until they are needed. Delays become negligible, and we can use <code>CatOptions.Compile</code> like heedless spartans.</p>
+<p><img src="./images/spartans.jpg" alt="" title="heedless spartans"></p>
+
