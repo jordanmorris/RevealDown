@@ -18,19 +18,16 @@ cat TalkNotes.md | marked | revealdown -t template.html -l 2 > TalkSlides.html
 
 Put the resultant html file (and any associated images) somewhere with a folder named `reveal.js`, containing the reveal.js files.
 
----
-
-&nbsp; | &nbsp; | &nbsp;
-
 [Download Binaries](https://github.com/regexjoe/RevealDown/releases)
 
-### Samples (WIP)
+### Samples
 
-<!-- have to have these weird dummy headers in so github will recognise it as a table -->
-&nbsp; | &nbsp; | &nbsp;
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
+*Content Form*|*Location*
+---|---
+**Markdown**|<http://regexjoe.github.io/RevealDown/regularcats/regularcats.md>
+**Plain HTML**|<http://regexjoe.github.io/RevealDown/regularcats/plain.html>
+**Slides Output**|<http://regexjoe.github.io/RevealDown/regularcats/>
+**Command Used**|`type regularcats.md | marked | revealdown -l 3 -t template.html > index.html`
 
 
 Usage
