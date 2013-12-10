@@ -27,7 +27,7 @@ Put the resultant html file (and any associated images) somewhere with a folder 
 ### Samples (WIP)
 
 <!-- have to have these weird dummy headers in so github will recognise it as a table -->
-<!----> | <!----> | <!---->
+<!-- header --> | <!----> | <!---->
 --- | --- | ---
 *Still* | `renders` | **nicely**
 1 | 2 | 3
