@@ -37,7 +37,7 @@ Put the resultant html file (and any associated images) somewhere with a folder 
 :---|:---
 **Markdown**|<https://raw.github.com/regexjoe/RevealDown/master/README.md>
 **Plain HTML**|You're looking at it.
-**Slides Output**|<http://regexjoe.github.io/RevealDown/rdreademe/>
+**Slides Output**|<http://regexjoe.github.io/RevealDown/rdreadme/>
 
 ***RevealDown Command Used: ***  
 `pandoc -t html5 -s README.md | revealdown -t -l 2 > index.html`
