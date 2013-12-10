@@ -27,14 +27,20 @@ Put the resultant html file (and any associated images) somewhere with a folder 
 **Markdown**|<http://regexjoe.github.io/RevealDown/regularcats/regularcats.md>
 **Plain HTML**|<http://regexjoe.github.io/RevealDown/regularcats/plain.html>
 **Slides Output**|<http://regexjoe.github.io/RevealDown/regularcats/>
-**RevealDown Command**| `type regularcats.md | marked | revealdown -l 3 -t template.html > index.html`
+
+***RevealDown Command Used: ***   
+`type regularcats.md | marked | revealdown -l 3 -t template.html > index.html`
+
+<!---->
 
 *This Reademe*|*Sample*
 :---|:---
 **Markdown**|<https://raw.github.com/regexjoe/RevealDown/master/README.md>
 **Plain HTML**|You're looking at it.
 **Slides Output**|<http://regexjoe.github.io/RevealDown/rdreademe/>
-**RevealDown Command**| `pandoc -t html5 -s README.md | revealdown -t -l 2 > index.html`
+
+***RevealDown Command Used: ***  
+`pandoc -t html5 -s README.md | revealdown -t -l 2 > index.html`
 
 
 Usage
