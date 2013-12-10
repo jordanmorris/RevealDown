@@ -20,18 +20,17 @@ Put the resultant html file (and any associated images) somewhere with a folder 
 
 ---
 
+&nbsp; | &nbsp; | &nbsp;
+
 [Download Binaries](https://github.com/regexjoe/RevealDown/releases)
 
 ### Samples (WIP)
 
------------ ------- --------------- -------------------------
-   First    row                12.0 Example of a row that
-                                    spans multiple lines.
-
-  Second    row                 5.0 Here's another one. Note
-                                    the blank line between
-                                    rows.
------------ ------- --------------- -------------------------
+<!-- have to have these weird dummy headers in so github will recognise it as a table -->
+<!---> | <!---> | <!--->
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
 
 
 Usage
