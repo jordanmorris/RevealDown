@@ -88,7 +88,7 @@
 <p>Note, RevealDown only outputs the <code>&lt;div&gt;</code> containing the slides themselves (no html/body tags), unless you specify the <code>-t</code> switch.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">revealdown</span> [-t [<span class="st">&quot;path/template.html&quot;</span>]] [-l <span class="kw">&lt;</span>slide level<span class="kw">&gt;</span>] [-h] (stdin)
 <span class="kw">Pipe</span> in input, get stdout. Extra section breaks (within a slide) <span class="kw">are</span>
-<span class="kw">defined</span> by adding <span class="kw">`&lt;</span>!<span class="kw">----&gt;`</span> on a line. If there are body tags in the 
+<span class="kw">defined</span> by adding <span class="kw">&lt;</span>!----<span class="kw">&gt;</span> on a line. If there are body tags in the 
 <span class="kw">input</span>, only what is inside the body tags will be processed/output.
 <span class="kw">______________________________</span>   
 <span class="kw">-l</span> <span class="kw">&lt;</span>slide level<span class="kw">&gt;</span> E.g. -l 2 (default 1) = <span class="kw">specify</span> the deepest heading 
