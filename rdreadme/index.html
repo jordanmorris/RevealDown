@@ -28,8 +28,58 @@
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">pandoc</span> -t html5 -s TalkNotes.md <span class="kw">|</span> <span class="kw">RevealDown.Cmd.exe</span> -t <span class="kw">&gt;</span> TalkSlides.html</code></pre>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cat</span> TalkNotes.md <span class="kw">|</span> <span class="kw">marked</span> <span class="kw">|</span> <span class="kw">revealdown</span> -t template.html -l 2 <span class="kw">&gt;</span> TalkSlides.html</code></pre>
 <p>Put the resultant html file (and any associated images) somewhere with a folder named <code>reveal.js</code>, containing the reveal.js files.</p>
-<hr />
 <p><a href="https://github.com/regexjoe/RevealDown/releases">Download Binaries</a></p>
+</section>
+<section style="level2">
+<h3 id="samples">Samples</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><em>Cat Code Presentation</em></th>
+<th style="text-align: left;"><em>Sample</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Markdown</strong></td>
+<td style="text-align: left;"><a href="http://regexjoe.github.io/RevealDown/regularcats/regularcats.md">http://regexjoe.github.io/RevealDown/regularcats/regularcats.md</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Plain HTML</strong></td>
+<td style="text-align: left;"><a href="http://regexjoe.github.io/RevealDown/regularcats/plain.html">http://regexjoe.github.io/RevealDown/regularcats/plain.html</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Slides Output</strong></td>
+<td style="text-align: left;"><a href="http://regexjoe.github.io/RevealDown/regularcats/">http://regexjoe.github.io/RevealDown/regularcats/</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>RevealDown Command Used: </em></strong><br /><code>type regularcats.md | marked | revealdown -l 3 -t template.html &gt; index.html</code></p>
+</section>
+<section style="level2">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><em>This Reademe</em></th>
+<th style="text-align: left;"><em>Sample</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Markdown</strong></td>
+<td style="text-align: left;"><a href="https://raw.github.com/regexjoe/RevealDown/master/README.md">https://raw.github.com/regexjoe/RevealDown/master/README.md</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Plain HTML</strong></td>
+<td style="text-align: left;">You're looking at it.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Slides Output</strong></td>
+<td style="text-align: left;"><a href="http://regexjoe.github.io/RevealDown/rdreademe/">http://regexjoe.github.io/RevealDown/rdreademe/</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>RevealDown Command Used: </em></strong><br /><code>pandoc -t html5 -s README.md | revealdown -t -l 2 &gt; index.html</code></p>
 </section>
 </section>
 <section style="level1">
