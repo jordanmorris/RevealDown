@@ -9,7 +9,7 @@ Consistent conversion of [Markdown](http://daringfireball.net/projects/markdown/
 ### Use Examples
 
 ``` bash
-pandoc -t html5 -s TalkNotes.md | RevealDown.Cmd.exe -t > TalkSlides.html
+pandoc -t html5 -s TalkNotes.md | revealdown -t > TalkSlides.html
 ```
 
 ``` bash
