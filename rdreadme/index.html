@@ -25,7 +25,7 @@
 </section>
 <section style="level2">
 <h3 id="use-examples">Use Examples</h3>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">pandoc</span> -t html5 -s TalkNotes.md <span class="kw">|</span> <span class="kw">RevealDown.Cmd.exe</span> -t <span class="kw">&gt;</span> TalkSlides.html</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">pandoc</span> -t html5 -s TalkNotes.md <span class="kw">|</span> <span class="kw">revealdown</span> -t <span class="kw">&gt;</span> TalkSlides.html</code></pre>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cat</span> TalkNotes.md <span class="kw">|</span> <span class="kw">marked</span> <span class="kw">|</span> <span class="kw">revealdown</span> -t template.html -l 2 <span class="kw">&gt;</span> TalkSlides.html</code></pre>
 <p>Put the resultant html file (and any associated images) somewhere with a folder named <code>reveal.js</code>, containing the reveal.js files.</p>
 <p><a href="https://github.com/regexjoe/RevealDown/releases">Download Binaries</a></p>
@@ -126,6 +126,7 @@
 <h2 id="improvements-i-would-make-given-the-time">Improvements I would make, given the time:</h2>
 <ul>
 <li>Rewrite it in a functional language. It turns out the task is more suited to that.</li>
+<li>Write real tests.</li>
 <li>Parse based on actual XML elements instead of line-by-line.</li>
 <li>Better application of SOLID principles.</li>
 </ul>
