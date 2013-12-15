@@ -90,5 +90,6 @@ Other important decisions involved how to manage slide divisions. In this I have
 Improvements I would make, given the time:
 -----------------------------------------
 - Rewrite it in a functional language. It turns out the task is more suited to that.
+- Write real tests.
 - Parse based on actual XML elements instead of line-by-line.
 - Better application of SOLID principles.  
